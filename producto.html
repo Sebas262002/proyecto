@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Matricula</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <style>
+        fieldset {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        input[type="text"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        .boton {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .boton.borrar {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <center><img src="./img/logo_ESPE.png" height=”170” width=400”></center>
+    </header>
+    <br>
+    <div style="text-align: left">
+        <!-- Header -->
+        <div class="header">
+            <a href="registro.html">Formulario Registro</a>
+            <a href="producto.html">Formulario Producto</a>
+            <a href="index.html">Matriculas</a>
+        </div>
+        <form name="FormProducto">
+            <!-- Datos Básicos -->
+            <fieldset>
+                <legend>Datos Básicos</legend>
+                <label for="nombre">Nombre del Producto:</label>
+                <input type="text" id="nombre" name="nombre">
+    
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+    
+                <label for="foto">Foto:</label>
+                <input type="file" id="foto" name="foto">
+    
+                <input type="checkbox" id="confidencial" name="confidencial"> Añadir información confidencial
+            </fieldset>
+    
+            <!-- Datos Económicos -->
+            <fieldset>
+                <legend>Datos Económicos</legend>
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio">
+    
+                <label for="impuesto">Impuestos:</label>
+                <select id="impuesto" name="impuesto">
+                    <option value="4">4%</option>
+                    <option value="8">8%</option>
+                    <option value="12">12%</option>
+                </select>
+    
+                <p>Promoción:</p>
+                <input type="radio" id="ninguna" name="promocion" value="ninguna" checked>
+                <label for="ninguna">Ninguna</label><br>
+    
+                <input type="radio" id="transporte" name="promocion" value="transporte">
+                <label for="transporte">Transporte Gratuito</label><br>
+    
+                <input type="radio" id="descuento" name="promocion" value="descuento">
+                <label for="descuento">Descuento 5%</label>
+            </fieldset>
+    
+            <!-- Botones para guardar o borrar datos -->
+            <button type="submit" class="boton">Guardar Cambios</button>
+            <button type="button" class="boton borrar" onclick="borrarDatos()">Borrar los datos introducidos</button>
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="contacto.html">Contacto PARTE III</a>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

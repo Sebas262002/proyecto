@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Matricula</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container input[type="button"] {
+            background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container input[type="button"]:hover {
+            background-color: #ff7f50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <center><img src="./img/logo_ESPE.png" height=”170” width=400”></center>
+    </header>
+    <br>
+    <div style="text-align: left">
+        <!-- Header -->
+        <div class="header">
+            <a href="registro.html">Formulario Registro</a>
+            <a href="producto.html">Formulario Producto</a>
+            <a href="index.html">Matriculas</a>
+        </div>
+        <div class="form-container">
+            <h2>Contacto</h2>
+            <form name="FormContacto" onsubmit="return validar();">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="usuario@mail.com" required>
+        
+                <label for="fecha">Fecha de Nacimiento</label>
+                <input type="text" id="fecha" name="fecha" placeholder="dd / mm / aaaa" required>
+        
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+        
+                <!-- Botón de envío que será deshabilitado tras la primera pulsación -->
+                <input type="button" id="enviar-btn" value="Enviar" onclick="if (validar()) this.disabled = true;">
+            </form>
+            <script src="script.js"></script>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="contacto.html">Contacto PARTE III</a>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

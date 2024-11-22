@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Matricula</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <style>
+        .form-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        fieldset {
+            border: 2px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #enviar-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+
+        #enviar-btn.active {
+            cursor: pointer;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <center><img src="./img/logo_ESPE.png" height=”170” width=400”></center>
+    </header>
+    <br>
+    <div style="text-align: left">
+        <!-- Header -->
+        <div class="header">
+            <a href="registro.html">Formulario Registro</a>
+            <a href="producto.html">Formulario Producto</a>
+            <a href="index.html">Matriculas</a>
+        </div>
+
+        <!-- Contenedor del formulario -->
+        <div class="form-container">
+            <!-- Formulario DIRECCIÓN DE ENVÍO -->
+            <fieldset id="direccion-envio">
+                <legend>DIRECCIÓN DE ENVÍO</legend>
+
+                <label for="calle">Calle Principal:</label>
+                <input type="text" id="calle" name="calle">
+
+                <label for="transversal">Transversal:</label>
+                <input type="text" id="transversal" name="transversal">
+
+                <input type="checkbox" id="propietario" name="propietario" onclick="actualizarBotonEnviar()"> Entrega al
+                propietario.<br>
+                <input type="checkbox" id="tercero" name="tercero" onclick="mostrarInformacionConfidencial()"> Entrega a
+                un tercero.<br>
+
+                <label for="canton">Cantones:</label>
+                <select id="canton" name="canton">
+                    <option value="quito">Quito</option>
+                    <option value="guayaquil">Guayaquil</option>
+                    <option value="cuenca">Cuenca</option>
+                </select><br><br>
+
+                <button id="enviar-btn" disabled>ENVIAR DATOS</button>
+            </fieldset>
+
+            <!-- Formulario INFORMACIÓN CONFIDENCIAL -->
+            <fieldset id="info-confidencial" class="hidden">
+                <legend>INFORMACIÓN CONFIDENCIAL</legend>
+
+                <label for="codigo">Código Postal:</label>
+                <input type="text" id="codigo" name="codigo">
+
+                <label for="referencia">Referencia de la Dirección:</label>
+                <textarea id="referencia" name="referencia" rows="4"></textarea><br><br>
+
+                <button type="button">Guardar</button>
+            </fieldset>
+        </div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="contacto.html">Contacto PARTE III</a>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
